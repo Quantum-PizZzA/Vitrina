@@ -10,6 +10,7 @@ const firebaseConfig = {
   messagingSenderId: process.env.VUE_APP_SECRET_messagingSenderId,
   appId: process.env.VUE_APP_SECRET_appId,
   measurementId: process.env.VUE_APP_SECRET_measurementId,
+  databaseURL: "https://online-show-case-default-rtdb.firebaseio.com",
 };
 
 const app = initializeApp(firebaseConfig);
