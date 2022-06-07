@@ -3,7 +3,7 @@ import Home from "@/views/Page/Home";
 import Register from "@/store/Register";
 import SignIn from "@/store/SignIn";
 
-import Todos from "@/components/Todos";
+import ShowCases from "@/components/ShowCases";
 
 export const ROUTES = [
   {
@@ -22,9 +22,9 @@ export const ROUTES = [
     component: SignIn,
   },
   {
-    path: "/todos",
-    name: "Todos",
-    component: Todos,
+    path: "/ShowCases",
+    name: "ShowCase",
+    component: ShowCase,
   },
 ];
 
@@ -43,8 +43,8 @@ export const NOT_AUTH_ROUTES = [
 
 export const AUTH_ROUTES = [
   {
-    path: "/todos",
+    path: "/ShowCases",
     name: "Задачи",
-    component: Todos,
+    component: ShowCases,
   },
 ];

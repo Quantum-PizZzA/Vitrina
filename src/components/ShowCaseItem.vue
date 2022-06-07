@@ -2,16 +2,16 @@
 <template>
   <div class="row item">
     <div class="col s1" align="left">{{ index + 1 }}</div>
-    <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
-    <div class="col s5" align="left">{{ todo.title.toUpperCase() }}</div>
+    <div class="col s2">{{ ShowCase.timeIn.toUpperCase() }}</div>
+    <div class="col s2">{{ ShowCase.timeOut.toUpperCase() }}</div>
+    <div class="col s5" align="left">{{ ShowCase.title.toUpperCase() }}</div>
     <div class="col s2">
-      {{ new Date(todo.date.toUpperCase()).toLocaleDateString() }}
+      {{ new Date(ShowCase.date.toUpperCase()).toLocaleDateString() }}
     </div>
     <div class="col s1">
       <button
         class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-        @click="EditTodo(todo.id)"
+        @click="EditShowCase(ShowCase.id)"
         align="center"
       >
         EDIT
@@ -20,7 +20,7 @@
     <div class="col s1">
       <button
         class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-        @click="handleDeleteTodo(todo.id)"
+        @click="handleDeleteShowCase(ShowCase.id)"
         align="center"
       >
         &times;
@@ -35,7 +35,7 @@ import { auth, database } from "@/firebase";
 
 export default {
   props: {
-    todo: {
+    ShowCase: {
       type: Object,
       required: true,
     },
@@ -44,7 +44,7 @@ export default {
     },
   },
   methods: {
-    handleDeleteTodo(id) {
+    handleDeleteShowCase(id) {
       // удаление задачи
       remove(ref(database, "tasks/" + auth.currentUser.uid + "/" + id));
     },

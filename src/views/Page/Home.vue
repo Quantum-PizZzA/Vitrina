@@ -21,34 +21,34 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    hometitle: "Добро пожаловать в ToDoList", //Добро пожаловать в мой ToDoList v0.0.1
-    count: 0,
-  }),
-  created() {
-    this.sum();
-  },
-  watch: {
-    title(value) {
-      console.log("new title: ", value);
+  export default {
+    data: () => ({
+      hometitle: "Добро пожаловать в OnlineShowCase",
+      count: 0
+    }),
+    created() {
+      this.sum();
     },
-  },
-  computed: {
-    tasksLength() {
-      return "Кол-во задач: " + this.count;
+    watch: {
+      title(value) {
+        console.log("new title: ", value);
+      }
     },
-  },
-  methods: {
-    sum() {},
-    changeTitle() {
-      this.hometitle += " Новый заголовок";
+    computed: {
+      tasksLength() {
+        return "Кол-во задач: " + this.count;
+      }
     },
-    changeCount() {
-      this.count++;
-    },
-  },
-};
+    methods: {
+      sum() {},
+      changeTitle() {
+        this.hometitle += " Новый заголовок";
+      },
+      changeCount() {
+        this.count++;
+      }
+    }
+  };
 </script>
 
 <style scoped></style>
