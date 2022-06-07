@@ -6,12 +6,12 @@
     <TodoAdd />
 
     <!-- Фильтр: -->
-    <h6>Список задач</h6>
+    <h6>Список товаров</h6>
     <div class="container">
-      <select class="select" v-model="filter">
-        <option value="completed">Завершенные</option>
-        <option value="not-completed">Не завершенные</option>
-      </select>
+<!--      <select class="select" v-model="filter">-->
+<!--        <option value="completed">Завершенные</option>-->
+<!--        <option value="not-completed">Не завершенные</option>-->
+<!--      </select>-->
     </div>
 
     <TodoList :todos="todos" />

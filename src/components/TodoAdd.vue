@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <input v-model="title" type="text" placeholder="Текст задачи" />
       <form>
-        <input v-model="timeIn" type="time" placeholder="Время IN" />
-        <input v-model="timeOut" type="time" placeholder="Время OUT" />
+      <input v-model="EAN" type="text" placeholder="EAN" />
+      <input v-model="INN" type="text" placeholder="INN" />
+      <input v-model="Price" type="text" placeholder="Цена" />
+        </form>
+      <form>
+        <input v-model="Name" type="text" placeholder="Название" />
+        <input v-model="tele" type="text" placeholder="Телефон" />
         <input v-model="date" type="date" placeholder="Дата" />
         <form @submit.prevent="onSubmit">
           <button class="waves-effect waves-light btn" type="submit">
@@ -25,9 +29,11 @@ export default {
   //начальое значение
   data() {
     return {
-      title: "",
-      timeIn: "",
-      timeOut: "",
+      EAN: "",
+      INN: "",
+      Price: "",
+      Name: "",
+      tele: "",
       date: "",
       completed: true,
     };
@@ -36,16 +42,20 @@ export default {
   methods: {
     onSubmit() {
       push(ref(database, "tasks/" + auth.currentUser.uid), {
-        title: this.title,
-        timeIn: this.timeIn,
-        timeOut: this.timeOut,
+        EAN: this.EAN,
+        INN: this.INN,
+        Price: this.Price,
+        Name: this.Name,
+        tele: this.tele,
         date: this.date,
         completed: false,
       });
       //значение после ввода
-      this.title = "";
-      this.timeIn = "";
-      this.timeOut = "";
+      this.EAN = "";
+      this.INN = "";
+      this.Price = "";
+      this. Name = "";
+      this.tele = "";
       this.date = "";
     },
   },

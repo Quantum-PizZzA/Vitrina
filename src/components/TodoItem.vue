@@ -2,9 +2,10 @@
 <template>
   <div class="row item">
     <div class="col s1" align="left">{{ index + 1 }}</div>
-    <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
-    <div class="col s5" align="left">{{ todo.title.toUpperCase() }}</div>
+    <div class="col s2">{{ todo.EAN.toUpperCase() }}</div>
+    <div class="col s2">{{ todo.INN.toUpperCase() }}</div>
+    <div class="col s2">{{ todo.Price.toUpperCase() }}</div>
+    <div class="col s5" align="left">{{ todo.Name.toUpperCase() }}</div>
     <div class="col s2">
       {{ new Date(todo.date.toUpperCase()).toLocaleDateString() }}
     </div>

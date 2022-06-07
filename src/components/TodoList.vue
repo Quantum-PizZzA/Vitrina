@@ -4,8 +4,9 @@
       <strong>
         <div class="row list">
           <div class="col s1" align="left">#</div>
-          <div class="col s2">Время</div>
-          <div class="col s2">Время</div>
+          <div class="col s2">EAN</div>
+          <div class="col s2">INN</div>
+          <div class="col s2">Цена</div>
           <div class="col s5">Название</div>
           <div class="col s2">Дата</div>
           <div class="col s2">Кнопка</div>
