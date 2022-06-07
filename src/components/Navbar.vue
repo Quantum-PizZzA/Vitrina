@@ -3,7 +3,7 @@
     <!-- Green цвет Nav бара -->
     <div class="nav-wrapper">
       <!-- Левая часть -->
-      <router-link to="/"><img src="../png/to-do.png" /></router-link>
+      <router-link to="/"><img src="../png/barcode.png" /></router-link>
       <!-- Правая часть -->
       <div class="routes">
         <div class="email">{{ email }}</div>
@@ -73,7 +73,7 @@ export default {
 <style scoped>
 img {
   width: 77px;
-  height: 77px;
+  height: 62px;
 }
 nav {
   padding: 0 3rem;
