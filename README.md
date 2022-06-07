@@ -2,6 +2,8 @@
 
 запуск:
 
+node.js 16
+
 npm cache clean --force
 
 npm i node-sass --force
