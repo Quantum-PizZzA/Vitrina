@@ -55,7 +55,7 @@ export default {
     //получать данные
     fetchData() {
       this.loadind = true;
-      const reference = ref(database, "tasks/" + auth.currentUser.uid);
+      const reference = ref(database, "Online-Show-Case/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
         this.todos = [];
         snapshot.forEach((childSnapshot) => {
