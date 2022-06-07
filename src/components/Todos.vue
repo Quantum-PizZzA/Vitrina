@@ -3,7 +3,7 @@
   <div>
     <h5>Добавить задачу</h5>
     <router-view />
-    <ShowCaseAdd />
+    <TodoAdd />
 
     <!-- Фильтр: -->
     <h6>Список задач</h6>
@@ -14,13 +14,13 @@
       </select>
     </div>
 
-    <ShowCaseList :ShowCases="ShowCases" />
+    <TodoList :todos="todos" />
   </div>
 </template>
 
 <script>
-import ShowCaseList from "@/components/ShowCaseList.vue";
-import ShowCaseAdd from "@/components/ShowCaseAdd.vue";
+import TodoList from "@/components/TodoList.vue";
+import TodoAdd from "@/components/TodoAdd.vue";
 
 export default {
   //значения по умолчанию:
@@ -33,8 +33,8 @@ export default {
   //создание:
 
   components: {
-    ShowCaseList,
-    ShowCaseAdd,
+    TodoList,
+    TodoAdd,
   },
 };
 </script>

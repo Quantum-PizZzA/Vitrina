@@ -14,8 +14,8 @@
       <hr />
       <!-- Loader: -->
       <Loader class="loader" v-if="loading" />
-      <div v-else-if="ShowCases.length">
-        <ShowCaseItem v-for="(ShowCase, i) in ShowCases" :key="i" :index="i" :ShowCase="ShowCase" />
+      <div v-else-if="todos.length">
+        <TodoItem v-for="(todo, i) in todos" :key="i" :index="i" :todo="todo" />
       </div>
       <p v-else>Нет задач</p>
       <hr />
@@ -25,7 +25,7 @@
 
 <script>
 import Loader from "@/components/Loader.vue";
-import ShowCaseItem from "@/components/ShowCaseItem";
+import TodoItem from "@/components/TodoItem";
 //firebase
 import { auth, database } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -35,11 +35,11 @@ export default {
   data() {
     return {
       loading: true,
-      ShowCases: [],
+      todos: [],
     };
   },
   components: {
-    ShowCaseItem,
+    TodoItem,
     Loader,
   },
   created() {
@@ -56,11 +56,11 @@ export default {
       this.loadind = true;
       const reference = ref(database, "tasks/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
-        this.ShowCases = [];
+        this.todos = [];
         snapshot.forEach((childSnapshot) => {
           const childKey = childSnapshot.key;
           const childData = childSnapshot.val();
-          this.ShowCases.push({ id: childKey, ...childData });
+          this.todos.push({ id: childKey, ...childData });
         });
         this.loading = false;
       });
