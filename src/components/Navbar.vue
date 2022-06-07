@@ -1,5 +1,5 @@
 <template>
-  <nav class="#0d7569 teal darken-1">
+  <nav class="#570924 pink lighten-4">
     <!-- Green цвет Nav бара -->
     <div class="nav-wrapper">
       <!-- Левая часть -->

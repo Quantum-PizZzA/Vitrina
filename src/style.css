@@ -1,6 +1,6 @@
 :root {
     --white: #f2f2f2;
-    --theme: #208b81;
+    --theme: #890d39;
     --gray: #525255;
     --gray2: #232626;
     --black: #2b2e2f;
@@ -20,6 +20,10 @@ hr {
     background-color: var(--gray); /* Цвет линии для браузера Firefox и Opera */
     border: none; /* Убираем границу для браузера Firefox */
     height: 1px; /* Толщина линии */
+}
+
+.btn-large{
+    background-color: var(--theme)
 }
 
 /* Отладка */
