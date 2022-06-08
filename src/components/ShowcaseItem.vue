@@ -47,7 +47,7 @@ export default {
   methods: {
     handleDeleteTodo(id) {
       // удаление задачи
-      remove(ref(database, "tasks/" + auth.currentUser.uid + "/" + id));
+      remove(ref(database, "db-showcase/" + auth.currentUser.uid + "/" + id));
     },
   },
 };

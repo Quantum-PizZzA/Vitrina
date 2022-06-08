@@ -41,8 +41,9 @@ export default {
   //передача данных в БД
   methods: {
     onSubmit() {
-      push(ref(database, "tasks/" + auth.currentUser.uid), {
+      push(ref(database, "db-showcase/" + auth.currentUser.uid), {
         EAN: this.EAN,
+        INN: this.INN,
         INN: this.INN,
         Price: this.Price,
         Name: this.Name,
