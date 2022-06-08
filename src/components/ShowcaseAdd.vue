@@ -21,9 +21,12 @@
   </div>
 </template>
 
+
 <script>
 import { ref, push } from "firebase/database";
 import { auth, database } from "@/firebase";
+// import { checkEAN } from "../javascript/ean.js";
+// import { checkINN } from "../javascript/inn.js";
 
 export default {
   //начальое значение
@@ -44,7 +47,6 @@ export default {
       push(ref(database, "db-showcase/" + auth.currentUser.uid), {
         EAN: this.EAN,
         INN: this.INN,
-        INN: this.INN,
         Price: this.Price,
         Name: this.Name,
         tele: this.tele,
@@ -61,6 +63,10 @@ export default {
     },
   },
 };
+
+// console.log(checkINN(INN.trim()));
+// console.log(checkEAN(EAN.trim()));
+
 </script>
 
 <style scoped>
