@@ -1,7 +1,7 @@
 // Проверка ИНН юрлиц, физлиц и ИП
 // @param {string} value - строка для проверки
 // @return boolean
-function checkInn(value) {
+function checkINN(value) {
   //первая цифра ИНН может быть нулём, поэтому он не может быть числом
   if (typeof value !== "string") return false; // ИНН должен быть строкой
   //ИНН юрлиц - 10 символов, ИП - 12 символов
