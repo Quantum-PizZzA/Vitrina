@@ -21,7 +21,7 @@
     <div class="col s1">
       <button
         class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-        @click="handleDeleteTodo(todo.id)"
+        @click="handleDeleteShowCase(todo.id)"
         align="center"
       >
         &times;
@@ -45,7 +45,7 @@ export default {
     },
   },
   methods: {
-    handleDeleteTodo(id) {
+    handleDeleteShowCase(id) {
       // удаление задачи
       remove(ref(database, "db-showcase/" + auth.currentUser.uid + "/" + id));
     },
