@@ -22,7 +22,7 @@ hr {
     height: 1px; /* Толщина линии */
 }
 
-.btn-large{
+.btn-large, .btn{
     background-color: var(--theme)
 }
 
