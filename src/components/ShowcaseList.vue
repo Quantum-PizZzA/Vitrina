@@ -15,8 +15,8 @@
       <hr />
       <!-- Loader: -->
       <Loader class="loader" v-if="loading" />
-      <div v-else-if="todos.length">
-        <ShowcaseItem v-for="(todo, i) in todos" :key="i" :index="i" :todo="todo" />
+      <div v-else-if="ShowCaseS.length">
+        <ShowcaseItem v-for="(ShowCase, i) in ShowCaseS" :key="i" :index="i" :ShowCase="ShowCase" />
       </div>
       <p v-else>Нет задач</p>
       <hr />
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       loading: true,
-      todos: [],
+      ShowCaseS: [],
     };
   },
   components: {
@@ -57,11 +57,11 @@ export default {
       this.loadind = true;
       const reference = ref(database, "db-showcase/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
-        this.todos = [];
+        this.ShowCaseS = [];
         snapshot.forEach((childSnapshot) => {
           const childKey = childSnapshot.key;
           const childData = childSnapshot.val();
-          this.todos.push({ id: childKey, ...childData });
+          this.ShowCaseS.push({ id: childKey, ...childData });
         });
         this.loading = false;
       });
