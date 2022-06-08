@@ -25,8 +25,8 @@
 <script>
 import { ref, push } from "firebase/database";
 import { auth, database } from "@/firebase";
-// import { checkEAN } from "../javascript/ean.js";
-// import { checkINN } from "../javascript/inn.js";
+// import * from "../javascript/ean.js";
+// import * from "../javascript/inn.js";
 
 export default {
   //начальое значение
