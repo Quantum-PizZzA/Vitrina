@@ -23,7 +23,7 @@
 <script>
 export default {
   data: () => ({
-    hometitle: "Добро пожаловать в ToDoList", //Добро пожаловать в мой ToDoList v0.0.1
+    hometitle: "Добро пожаловать в онлайн витрину", //Добро пожаловать в онлайн витрину
     count: 0,
   }),
   created() {

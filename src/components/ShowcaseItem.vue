@@ -2,17 +2,17 @@
 <template>
   <div class="row item">
     <div class="col s1" align="left">{{ index + 1 }}</div>
-    <div class="col s2">{{ todo.EAN.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.INN.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.Price.toUpperCase() }}</div>
-    <div class="col s5" align="left">{{ todo.Name.toUpperCase() }}</div>
+    <div class="col s2">{{ ShowCase.EAN.toUpperCase() }}</div>
+    <div class="col s2">{{ ShowCase.INN.toUpperCase() }}</div>
+    <div class="col s2">{{ ShowCase.Price.toUpperCase() }}</div>
+    <div class="col s5" align="left">{{ ShowCase.Name.toUpperCase() }}</div>
     <div class="col s2">
-      {{ new Date(todo.date.toUpperCase()).toLocaleDateString() }}
+      {{ new Date(ShowCase.date.toUpperCase()).toLocaleDateString() }}
     </div>
     <div class="col s1">
       <button
         class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-        @click="EditTodo(todo.id)"
+        @click="EditTodo(ShowCase.id)"
         align="center"
       >
         EDIT
@@ -21,7 +21,7 @@
     <div class="col s1">
       <button
         class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-        @click="handleDeleteShowCase(todo.id)"
+        @click="handleDeleteShowCase(ShowCase.id)"
         align="center"
       >
         &times;
@@ -36,7 +36,7 @@ import { auth, database } from "@/firebase";
 
 export default {
   props: {
-    todo: {
+    ShowCase: {
       type: Object,
       required: true,
     },
