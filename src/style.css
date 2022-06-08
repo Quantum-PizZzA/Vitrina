@@ -26,7 +26,26 @@ hr {
     background-color: var(--theme)
 }
 
-/* Отладка */
+.container{
+    max-width: 1200px;
+}
+@media (max-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+@media (max-width: 992px) {
+    .container{
+        max-width: 750px;
+    }
+}
+@media (max-width: 767px) {
+    .container{
+        max-width: none;
+    }
+}
+
+ /*Отладка*/
 /*div {*/
 /*  border: 1px solid #00c939 !important;*/
 /*}*/
