@@ -1,14 +1,23 @@
 # Online-ShowCase
 
-запуск:
 
+####### Требования
 node.js 16
 
+запуск:
+
+```
 npm cache clean --force
+```
 
+```
 npm i node-sass --force
+```
 
+```
 npm i 
+```
+
 
 
 ## Vercel.com
