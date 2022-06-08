@@ -7,8 +7,8 @@
           <div class="col s2">EAN</div>
           <div class="col s2">INN</div>
           <div class="col s2">Цена</div>
-          <div class="col s5">Название</div>
-          <div class="col s2">Дата</div>
+          <div class="col s2">Название</div>
+          <div class="col s1">Дата</div>
           <div class="col s2">Кнопка</div>
         </div>
       </strong>
@@ -16,7 +16,12 @@
       <!-- Loader: -->
       <Loader class="loader" v-if="loading" />
       <div v-else-if="ShowCaseS.length">
-        <ShowcaseItem v-for="(ShowCase, i) in ShowCaseS" :key="i" :index="i" :ShowCase="ShowCase" />
+        <ShowcaseItem
+          v-for="(ShowCase, i) in ShowCaseS"
+          :key="i"
+          :index="i"
+          :ShowCase="ShowCase"
+        />
       </div>
       <p v-else>Нет задач</p>
       <hr />
@@ -46,7 +51,8 @@ export default {
   created() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        this.fetchData();
+        // this.fetchData();
+        this.fetchAllData();
       }
     });
   },
@@ -66,23 +72,51 @@ export default {
         this.loading = false;
       });
     },
+    fetchAllData() {
+      this.loadind = true;
+      const reference = ref(database, "db-showcase");
+      onValue(reference, (snapshot) => {
+        this.ShowCaseS = [];
+        snapshot.forEach((childSnapshot) => {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+          this.ShowCaseS.push(
+            ...Object.values(childData).map((item) => ({
+              id: childKey,
+              ...item,
+            }))
+          );
+        });
+        this.loading = false;
+      });
+    },
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 div {
   margin: 5px 0 5px 0 !important;
 }
 .list {
-  display: flex;
-
   border-radius: 10em;
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
   align-items: center;
-  font-size: 16px;
 
   background: var(--gray2);
+
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
 }
 </style>

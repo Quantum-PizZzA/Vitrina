@@ -1,16 +1,31 @@
 <template>
   <div class="container">
     <div>
-      <form>
-      <input v-model="EAN" type="text" placeholder="EAN" />
-      <input v-model="INN" type="text" placeholder="INN" />
-      <input v-model="Price" type="text" placeholder="Цена" />
-        </form>
-      <form>
-        <input v-model="Name" type="text" placeholder="Название" />
-        <input v-model="tele" type="text" placeholder="Телефон" />
-        <input v-model="date" type="date" placeholder="Дата" />
-        <form @submit.prevent="onSubmit">
+      <form class="row">
+        <div class="col s12 m4">
+          <input v-model="EAN" type="text" placeholder="EAN" />
+        </div>
+        <div class="col s12 m4">
+          <input v-model="INN" type="text" placeholder="INN" />
+        </div>
+        <div class="col s12 m4">
+          <input v-model="Price" type="text" placeholder="Цена" />
+        </div>
+      </form>
+      {{ errors }}
+
+      <form class="row">
+        <div class="col s12 m4">
+          <input v-model="Name" type="text" placeholder="Название" />
+        </div>
+        <div class="col s12 m4">
+          <input v-model="tele" type="text" placeholder="Телефон" />
+        </div>
+        <div class="col s12 m4">
+          <input v-model="date" type="date" placeholder="Дата" />
+        </div>
+
+        <form class="col s12" @submit.prevent="onSubmit">
           <button class="waves-effect waves-light btn" type="submit">
             Создать
             <i class="material-icons right">send</i>
@@ -21,29 +36,36 @@
   </div>
 </template>
 
-
 <script>
 import { ref, push } from "firebase/database";
 import { auth, database } from "@/firebase";
-// import * from "../javascript/ean.js";
-// import * from "../javascript/inn.js";
+import { checkEAN } from "../javascript/ean.js";
+import { checkINN } from "../javascript/inn.js";
 
 export default {
   //начальое значение
   data() {
     return {
+      errors: "",
       EAN: "",
       INN: "",
       Price: "",
       Name: "",
       tele: "",
-      date: "",
+      date: new Date().toISOString().slice(0, 10),
       completed: true,
     };
   },
+  created() {},
   //передача данных в БД
   methods: {
     onSubmit() {
+      this.errors = "";
+      if (checkEAN(this.EAN) === false || checkINN(this.INN) === false) {
+        this.errors = "Что-то не так";
+        return;
+      }
+
       push(ref(database, "db-showcase/" + auth.currentUser.uid), {
         EAN: this.EAN,
         INN: this.INN,
@@ -57,29 +79,24 @@ export default {
       this.EAN = "";
       this.INN = "";
       this.Price = "";
-      this. Name = "";
+      this.Name = "";
       this.tele = "";
       this.date = "";
     },
   },
 };
-
-// console.log(checkINN(INN.trim()));
-// console.log(checkEAN(EAN.trim()));
-
 </script>
 
-<style scoped>
-form {
-  display: flex; /* расположение поля для создания */
+<style scoped lang="scss">
+button {
+  margin-top: 16px;
 }
 
 button,
 input {
-  margin: 8px 8px 8px 8px !important; /* расположение данных ввода и кнопки */
-}
-
-input {
-  width: 0;
+  margin: 0 8px;
+  &:focus {
+    border-color: #a6267c;
+  }
 }
 </style>

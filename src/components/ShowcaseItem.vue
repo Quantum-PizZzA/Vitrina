@@ -2,11 +2,13 @@
 <template>
   <div class="row item">
     <div class="col s1" align="left">{{ index + 1 }}</div>
-    <div class="col s2">{{ ShowCase.EAN.toUpperCase() }}</div>
-    <div class="col s2">{{ ShowCase.INN.toUpperCase() }}</div>
-    <div class="col s2">{{ ShowCase.Price.toUpperCase() }}</div>
-    <div class="col s5" align="left">{{ ShowCase.Name.toUpperCase() }}</div>
-    <div class="col s2">
+    <div class="col ean s2">{{ ShowCase.EAN.toUpperCase() }}</div>
+    <div class="col inn s2">{{ ShowCase.INN.toUpperCase() }}</div>
+    <div class="col price s2">{{ ShowCase.Price.toUpperCase() }}</div>
+    <div class="col name s2" align="left">
+      {{ ShowCase.Name.toUpperCase() }}
+    </div>
+    <div class="col date s1">
       {{ new Date(ShowCase.date.toUpperCase()).toLocaleDateString() }}
     </div>
     <div class="col s1">
@@ -53,20 +55,64 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 div {
   /*margin: 4px 4px 4px 4px !important;*/
 }
 .item {
   display: flex;
-
   border-radius: 10em;
-  justify-content: space-between; /* расположение по краям */
-  padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
+  padding: 0.5rem 0.5rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
   align-items: center;
-  font-size: 16px;
-
+  font-size: 10px;
   background: var(--gray2);
+
+  @media (min-width: 576px) {
+    padding: 0.5rem 2rem;
+  }
+}
+
+.ean {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+.inn {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+.price {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+.name {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+.date {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+.btn-small {
+  font-size: 8px;
+  @media (min-width: 576px) {
+    font-size: 10px;
+  }
+  margin: 0;
 }
 </style>
