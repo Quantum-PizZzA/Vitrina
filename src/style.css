@@ -31,6 +31,10 @@ hr {
   background-color: var(--theme);
 }
 
+html {
+  color-scheme: var(--white) !important;
+}
+
 /*Отладка*/
 /*div {*/
 /*  border: 1px solid #00c939 !important;*/

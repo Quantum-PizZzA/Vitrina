@@ -65,7 +65,7 @@ div {
   padding: 0.5rem 0.5rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
   background: var(--gray2);
 
   @media (min-width: 576px) {
@@ -74,23 +74,23 @@ div {
 }
 
 .ean {
-  font-size: 8px;
+  font-size: 10px;
   @media (min-width: 576px) {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
 .inn {
-  font-size: 8px;
+  font-size: 10px;
   @media (min-width: 576px) {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
 .price {
-  font-size: 8px;
+  font-size: 10px;
   @media (min-width: 576px) {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 

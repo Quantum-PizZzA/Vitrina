@@ -106,13 +106,13 @@ div {
 
   background: var(--gray2);
 
-  font-size: 8px;
+  font-size: 9px;
   @media (min-width: 576px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   @media (min-width: 768px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   @media (min-width: 992px) {
