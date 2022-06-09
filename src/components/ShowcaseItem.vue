@@ -55,9 +55,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div {
-  /*margin: 4px 4px 4px 4px !important;*/
-}
 .item {
   display: flex;
   border-radius: 10em;
