@@ -15,13 +15,16 @@
         >
           Зарегистрироваться
         </button>
+<!--        <ShowcaseItem></ShowcaseItem>-->
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
+import ShowcaseItem from "../components/ShowcaseItem";
 export default {
+  components: {ShowcaseItem},
   data: () => ({
     hometitle: "Добро пожаловать в онлайн витрину", //Добро пожаловать в онлайн витрину
     count: 0,
