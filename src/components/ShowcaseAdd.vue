@@ -62,7 +62,7 @@ export default {
     onSubmit() {
       this.errors = "";
       if (checkEAN(this.EAN) === false || checkINN(this.INN) === false) {
-        this.errors = "Что-то не так";
+        this.errors = "EAN и/или INN не проходит проверку";
         return;
       }
 
