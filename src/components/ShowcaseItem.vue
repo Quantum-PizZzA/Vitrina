@@ -1,4 +1,3 @@
-//Обекты внутри | HTML сегмент |
 <template>
   <div class="row item">
     <div class="col s1" align="left">{{ index + 1 }}</div>
