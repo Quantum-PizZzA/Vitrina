@@ -15,7 +15,6 @@
         >
           Зарегистрироваться
         </button>
-<!--        <ShowcaseItem></ShowcaseItem>-->
       </router-link>
     </div>
   </div>
@@ -26,7 +25,7 @@ import ShowcaseItem from "../components/ShowcaseItem";
 export default {
   components: {ShowcaseItem},
   data: () => ({
-    hometitle: "Добро пожаловать в онлайн витрину", //Добро пожаловать в онлайн витрину
+    hometitle: "Добро пожаловать в онлайн витрину",
     count: 0,
   }),
   created() {
@@ -37,16 +36,6 @@ export default {
       console.log("new title: ", value);
     },
   },
-  computed: {
-    tasksLength() {
-      return "Кол-во задач: " + this.count;
-    },
-  },
-  methods: {
-    sum() {},
-    changeTitle() {
-      this.hometitle += " Новый заголовок";
-    },
     changeCount() {
       this.count++;
     },
