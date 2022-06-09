@@ -51,14 +51,14 @@ export default {
   created() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // this.fetchData();
-        this.fetchAllData();
+        // this.fetchData(); //Данные текущего пользователя
+        this.fetchAllData(); //Все данные
       }
     });
   },
 
   methods: {
-    //получать данные
+    //получать Данные
     fetchData() {
       this.loadind = true;
       const reference = ref(database, "db-showcase/" + auth.currentUser.uid);
@@ -72,6 +72,7 @@ export default {
         this.loading = false;
       });
     },
+    //получать Все Данные
     fetchAllData() {
       this.loadind = true;
       const reference = ref(database, "db-showcase");
