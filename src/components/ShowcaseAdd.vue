@@ -81,7 +81,7 @@ export default {
       this.Price = "";
       this.Name = "";
       this.tele = "";
-      this.date = "";
+      this.date = new Date().toISOString().slice(0, 10);
     },
   },
 };
