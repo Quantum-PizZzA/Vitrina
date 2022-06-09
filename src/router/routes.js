@@ -1,4 +1,4 @@
-import Home from "@/views/Page/Home";
+import Home from "@/views/Home";
 
 import Register from "@/store/Register";
 import SignIn from "@/store/SignIn";
@@ -38,6 +38,11 @@ export const NOT_AUTH_ROUTES = [
     path: "/signin",
     name: "Войти",
     component: SignIn,
+  },
+  {
+    path: "/showcases",
+    name: "Товары",
+    component: Showcases,
   },
 ];
 
