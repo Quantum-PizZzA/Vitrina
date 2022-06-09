@@ -58,7 +58,7 @@ export default {
 .item {
   display: flex;
   border-radius: 10em;
-  padding: 0.5rem 0.5rem; /* Применяется для всех 4 сторон */
+  padding: 0.5rem 0.5rem;
   margin-bottom: 1rem;
   align-items: center;
   font-size: 12px;
