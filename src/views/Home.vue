@@ -23,23 +23,11 @@
 <script>
 import ShowcaseItem from "../components/ShowcaseItem";
 export default {
-  components: {ShowcaseItem},
+  components: { ShowcaseItem },
   data: () => ({
     hometitle: "Добро пожаловать в онлайн витрину",
     count: 0,
   }),
-  created() {
-    this.sum();
-  },
-  watch: {
-    title(value) {
-      console.log("new title: ", value);
-    },
-  },
-    changeCount() {
-      this.count++;
-    },
-  },
 };
 </script>
 
