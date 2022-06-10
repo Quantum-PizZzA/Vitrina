@@ -6,7 +6,7 @@
     <ShowcaseAdd />
 
     <!-- Фильтр: -->
-    <h6>Список товаров</h6>
+    <h6>Список всех товаров</h6>
 
     <ShowcaseList :Showcase="Showcase" />
   </div>
