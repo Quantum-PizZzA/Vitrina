@@ -4,6 +4,7 @@ import Register from "@/store/Register";
 import SignIn from "@/store/SignIn";
 
 import Showcases from "@/components/Showcases";
+import MyShowcases from "@/components/MyShowcases";
 
 export const ROUTES = [
   {
@@ -51,5 +52,10 @@ export const AUTH_ROUTES = [
     path: "/showcases",
     name: "Товары",
     component: Showcases,
+  },
+  {
+    path: "/myshowcases",
+    name: "Мои товары",
+    component: MyShowcases,
   },
 ];

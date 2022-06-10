@@ -2,14 +2,14 @@
   <div>
     <ul>
       <strong>
-        <div class="row list">
-          <div class="col s1" align="left">#</div>
-          <div class="col s2">EAN</div>
-          <div class="col s2">INN</div>
-          <div class="col s2">Цена</div>
-          <div class="col s2">Название</div>
-          <div class="col s1">Дата</div>
-          <div class="col s2">Кнопка</div>
+        <div className="row list">
+          <div className="col s1" align="left">#</div>
+          <div className="col s2">EAN</div>
+          <div className="col s2">INN</div>
+          <div className="col s2">Цена</div>
+          <div className="col s2">Название</div>
+          <div className="col s1">Дата</div>
+          <div className="col s2">Кнопка</div>
         </div>
       </strong>
       <hr />
@@ -51,46 +51,45 @@ export default {
   created() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // this.fetchData(); //Данные текущего пользователя
-        this.fetchAllData(); //Все данные
+        this.fetchData(); //Данные текущего пользователя
       }
     });
   },
 
   methods: {
     //получать Данные пользователя
-    // fetchData() {
-    //   this.loadind = true;
-    //   const reference = ref(database, "db-showcase/" + auth.currentUser.uid);
-    //   onValue(reference, (snapshot) => {
-    //     this.ShowCaseS = [];
-    //     snapshot.forEach((childSnapshot) => {
-    //       const childKey = childSnapshot.key;
-    //       const childData = childSnapshot.val();
-    //       this.ShowCaseS.push({ id: childKey, ...childData });
-    //     });
-    //     this.loading = false;
-    //   });
-    // },
-    //получать Все Данные
-    fetchAllData() {
+    fetchData() {
       this.loadind = true;
-      const reference = ref(database, "db-showcase");
+      const reference = ref(database, "db-showcase/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
         this.ShowCaseS = [];
         snapshot.forEach((childSnapshot) => {
           const childKey = childSnapshot.key;
           const childData = childSnapshot.val();
-          this.ShowCaseS.push(
-            ...Object.values(childData).map((item) => ({
-              id: childKey,
-              ...item,
-            }))
-          );
+          this.ShowCaseS.push({ id: childKey, ...childData });
         });
         this.loading = false;
       });
     },
+    //получать Все Данные
+    // fetchAllData() {
+    //   this.loadind = true;
+    //   const reference = ref(database, "db-showcase");
+    //   onValue(reference, (snapshot) => {
+    //     this.ShowCaseS = [];
+    //     snapshot.forEach((childSnapshot) => {
+    //       const childKey = childSnapshot.key;
+    //       const childData = childSnapshot.val();
+    //       this.ShowCaseS.push(
+    //         ...Object.values(childData).map((item) => ({
+    //           id: childKey,
+    //           ...item,
+    //         }))
+    //       );
+    //     });
+    //     this.loading = false;
+    //   });
+    // },
   },
 };
 </script>
@@ -98,6 +97,7 @@ export default {
 div {
   margin: 5px 0 5px 0 !important;
 }
+
 .list {
   border-radius: 10em;
   justify-content: space-between; /* расположение по краям */
