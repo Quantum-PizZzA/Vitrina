@@ -23,13 +23,13 @@ export const ROUTES = [
     component: SignIn,
   },
   {
-    path: "/AllShowcases",
+    path: "/AllСases",
     name: "Showcases",
     component: Showcases,
   },
 
   {
-    path: "/MyShowcases",
+    path: "/MyСases",
     name: "Мои товары",
     component: MyShowcases,
   },
@@ -47,7 +47,7 @@ export const NOT_AUTH_ROUTES = [
     component: SignIn,
   },
   {
-    path: "/AllShowcases",
+    path: "/AllСases",
     name: "Все товары",
     component: Showcases,
   },
@@ -55,12 +55,12 @@ export const NOT_AUTH_ROUTES = [
 
 export const AUTH_ROUTES = [
   {
-    path: "/AllShowcases",
+    path: "/AllСases",
     name: "Все товары",
     component: Showcases,
   },
   {
-    path: "/MyShowcases",
+    path: "/MyСases",
     name: "Мои товары",
     component: MyShowcases,
   },
