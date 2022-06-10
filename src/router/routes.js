@@ -13,48 +13,54 @@ export const ROUTES = [
     component: Home,
   },
   {
-    path: "/register",
+    path: "/Register",
     name: "Регистрация",
     component: Register,
   },
   {
-    path: "/signin",
+    path: "/SignIn",
     name: "Авторизация",
     component: SignIn,
   },
   {
-    path: "/showcases",
+    path: "/AllShowcases",
     name: "Showcases",
     component: Showcases,
+  },
+
+  {
+    path: "/MyShowcases",
+    name: "Мои товары",
+    component: MyShowcases,
   },
 ];
 
 export const NOT_AUTH_ROUTES = [
   {
-    path: "/register",
+    path: "/Register",
     name: "Регистрация",
     component: Register,
   },
   {
-    path: "/signin",
+    path: "/SignIn",
     name: "Войти",
     component: SignIn,
   },
   {
-    path: "/showcases",
-    name: "Товары",
+    path: "/AllShowcases",
+    name: "Все товары",
     component: Showcases,
   },
 ];
 
 export const AUTH_ROUTES = [
   {
-    path: "/showcases",
-    name: "Товары",
+    path: "/AllShowcases",
+    name: "Все товары",
     component: Showcases,
   },
   {
-    path: "/myshowcases",
+    path: "/MyShowcases",
     name: "Мои товары",
     component: MyShowcases,
   },
