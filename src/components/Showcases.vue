@@ -8,7 +8,7 @@
     <!-- Фильтр: -->
     <h6>Список товаров</h6>
 
-    <ShowcaseList :todos="todos" />
+    <ShowcaseList :Showcase="Showcase" />
   </div>
 </template>
 
@@ -17,7 +17,6 @@ import ShowcaseList from "@/components/ShowcaseList.vue";
 import ShowcaseAdd from "@/components/ShowcaseAdd.vue";
 
 export default {
-
   components: {
     ShowcaseList,
     ShowcaseAdd,

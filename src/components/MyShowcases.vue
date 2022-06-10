@@ -8,7 +8,7 @@
     <!-- Фильтр: -->
     <h6>Список моих товаров</h6>
 
-    <MyList :todos="todos" />
+    <MyList :Showcase="Showcase" />
   </div>
 </template>
 
