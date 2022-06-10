@@ -100,8 +100,8 @@ div {
 
 .list {
   border-radius: 10em;
-  justify-content: space-between; /* расположение по краям */
-  padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
   margin-bottom: 1rem;
   align-items: center;
 
