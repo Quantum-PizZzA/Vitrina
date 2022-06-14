@@ -37,7 +37,12 @@ import { auth, database } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { onValue, ref } from "firebase/database";
 
+// если надо чтобы принимал надо объявить поле props
+// если не надо, то не передавай
 export default {
+  // props: {
+  //   showCases: {type: Array, default: []},
+  // },
   data() {
     return {
       loading: true,
