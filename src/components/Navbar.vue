@@ -31,7 +31,6 @@
 <script>
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
-import { useRouter } from "vue-router";
 import { onAuthStateChanged } from "firebase/auth";
 import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
 
@@ -56,14 +55,8 @@ export default {
   methods: {
     logout() {
       signOut(auth).then(() => {
-        const router = useRouter();
-
-        // todo: error не отрабатывает push
-        setTimeout(() => {
-          console.log("Выход из системы");
-          router.push("/home");
-          // исскуственная задержка:
-        }, 3000);
+        this.isAuth = false;
+        this.$router.push("/");
       });
     },
   },

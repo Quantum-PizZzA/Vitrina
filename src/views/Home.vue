@@ -23,24 +23,48 @@
 
       <!-- твой компонент не принимает никакие данных на вход -->
       <!-- <ShowcaseList :show-cases="ShowCaseS" />-->
-      <!-- <ShowcaseList />-->
-      <ShowCaseS />
+      <Loader v-if="isLoading" class="loader" />
+      <Cases v-else :cases="cases" />
     </div>
   </div>
 </template>
 
 <script>
-// вот тут заимпортил компонент с названием ShowCaseS,
-// а на верстке используешь ShowcaseList, объявил как  components: { ShowCaseS },
-import ShowCaseS from "../components/ShowcaseList";
+import { onValue, ref } from "firebase/database";
+import { database } from "@/firebase";
+
+import Cases from "../components/Cases.vue";
+import Loader from "@/components/Loader.vue";
 export default {
-  components: { ShowCaseS },
+  components: { Cases, Loader },
   data: () => ({
     // camelCase
     homeTitle: "Добро пожаловать в онлайн витрину",
     count: 0,
-    ShowCaseS: [],
+    cases: [],
+    isLoading: false,
   }),
+  created() {
+    this.fetchAllData();
+  },
+  methods: {
+    fetchAllData() {
+      this.isLoading = true;
+      const reference = ref(database, "db-showcase");
+      onValue(reference, (snapshot) => {
+        this.cases = [];
+        snapshot.forEach((childSnapshot) => {
+          const childData = childSnapshot.val();
+          this.cases.push(
+            ...Object.values(childData).map((item) => ({
+              ...item,
+            }))
+          );
+        });
+        this.isLoading = false;
+      });
+    },
+  },
 };
 </script>
 

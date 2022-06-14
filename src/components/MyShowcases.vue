@@ -8,17 +8,17 @@
     <!-- Фильтр: -->
     <h6>Список моих товаров</h6>
 
-    <MyList :Showcase="Showcase" />
+    <!--    <MyList :Showcase="Showcase" />-->
   </div>
 </template>
 
 <script>
-import MyList from "@/components/MyList.vue";
+// import MyList from "@/components/MyList.vue";
 import ShowcaseAdd from "@/components/ShowcaseAdd.vue";
 
 export default {
   components: {
-    MyList,
+    // MyList,
     ShowcaseAdd,
   },
 };

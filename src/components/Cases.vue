@@ -13,11 +13,9 @@
         </div>
       </strong>
       <hr />
-      <!-- Loader: -->
-      <Loader class="loader" v-if="loading" />
-      <div v-else-if="ShowCaseS.length">
-        <ShowcaseItem
-          v-for="(ShowCase, i) in ShowCaseS"
+      <div v-if="cases.length">
+        <Case
+          v-for="(ShowCase, i) in cases"
           :key="i"
           :index="i"
           :ShowCase="ShowCase"
@@ -30,34 +28,25 @@
 </template>
 
 <script>
-import Loader from "@/components/Loader.vue";
-import ShowcaseItem from "@/components/ShowcaseItem";
+import Case from "@/components/Case.vue";
 //firebase
-import { auth, database } from "@/firebase";
+import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { onValue, ref } from "firebase/database";
 
 // если надо чтобы принимал надо объявить поле props
 // если не надо, то не передавай
 export default {
-  // props: {
-  //   showCases: {type: Array, default: []},
-  // },
-  data() {
-    return {
-      loading: true,
-      ShowCaseS: [],
-    };
+  props: {
+    cases: { type: Array, default: [] },
   },
+  data: () => ({}),
   components: {
-    ShowcaseItem,
-    Loader,
+    Case,
   },
   created() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // this.fetchData(); //Данные текущего пользователя
-        this.fetchAllData(); //Все данные
       }
     });
   },
@@ -78,23 +67,6 @@ export default {
     //   });
     // },
     //получать Все Данные
-    fetchAllData() {
-      this.loadind = true;
-      const reference = ref(database, "db-showcase");
-      onValue(reference, (snapshot) => {
-        this.ShowCaseS = [];
-        snapshot.forEach((childSnapshot) => {
-          const childKey = childSnapshot.key;
-          const childData = childSnapshot.val();
-          this.ShowCaseS.push(
-            ...Object.values(childData).map((item) => ({
-              ...item,
-            }))
-          );
-        });
-        this.loading = false;
-      });
-    },
   },
 };
 </script>

@@ -27,7 +27,7 @@ const signIn = () => {
   signInWithEmailAndPassword(auth, email.value, password.value) // ЭТА СТРОКА ИЗМЕНЕНА
     .then((data) => {
       console.log("Успешно вошёл в систему!");
-      router.push("/todos"); // перенаправление на канал
+      router.push("/"); // перенаправление на канал
     })
     .catch((error) => {
       switch (error.code) {

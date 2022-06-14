@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import ShowcaseList from "@/components/ShowcaseList.vue";
+import Cases from "@/components/Cases.vue";
 import ShowcaseAdd from "@/components/ShowcaseAdd.vue";
 
 export default {
   components: {
-    ShowcaseList,
+    Cases,
     ShowcaseAdd,
   },
 };
