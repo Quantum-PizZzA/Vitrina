@@ -84,7 +84,7 @@ export default {
       onValue(reference, (snapshot) => {
         this.ShowCaseS = [];
         snapshot.forEach((childSnapshot) => {
-          const childKey = childSnapshot.key;
+          // const childKey = childSnapshot.key;
           const childData = childSnapshot.val();
           this.ShowCaseS.push(
             ...Object.values(childData).map((item) => ({
