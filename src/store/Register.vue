@@ -29,13 +29,13 @@ const email = ref("");
 
 const password = ref("");
 const password2 = ref("");
-const router = useRouter(); // получить ссылку на наш маршрутизатор vue
+const router = useRouter();
 const register = () => {
   if (password.value == password2.value) {
     createUserWithEmailAndPassword(auth, email.value, password.value) // нужно значение, потому что ref()
       .then((data) => {
         console.log("Успешно зарегистрирован!");
-        router.push("/todos"); // перенаправление на канал
+        router.push("/todos");
       })
       .catch((error) => {
         console.log(error.code);

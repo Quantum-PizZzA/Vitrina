@@ -16,13 +16,8 @@
           Зарегистрироваться
         </button>
       </router-link>
-
       <router-view />
-
       <h6>Список товаров</h6>
-
-      <!-- твой компонент не принимает никакие данных на вход -->
-      <!-- <ShowcaseList :show-cases="ShowCaseS" />-->
       <Loader v-if="isLoading" class="loader" />
       <Cases v-else :cases="cases" />
     </div>
