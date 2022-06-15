@@ -4,7 +4,7 @@ import Register from "@/store/Register";
 import SignIn from "@/store/SignIn";
 
 import Showcases from "@/components/Showcases";
-import MyShowcases from "@/components/MyShowcases";
+import MyShowcases from "@/components/MyCases";
 
 export const ROUTES = [
   {

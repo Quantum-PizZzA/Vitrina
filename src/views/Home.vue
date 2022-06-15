@@ -17,6 +17,9 @@
         </button>
       </router-link>
       <router-view />
+      <div class="container">
+        <input type="text" />
+      </div>
       <h6>Список товаров</h6>
       <Loader v-if="isLoading" class="loader" />
       <Cases v-else :cases="cases" />
@@ -63,4 +66,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  margin: 30px;
+}
+</style>

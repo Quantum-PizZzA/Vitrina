@@ -14,7 +14,7 @@
 
 <script>
 import Cases from "@/components/Cases.vue";
-import ShowcaseAdd from "@/components/ShowcaseAdd.vue";
+import ShowcaseAdd from "@/components/CaseAdd.vue";
 
 export default {
   components: {
