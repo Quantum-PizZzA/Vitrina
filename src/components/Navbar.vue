@@ -1,11 +1,13 @@
 <template>
-  <nav class="#6d0b3f pink darken-4">
-    <!-- Green цвет Nav бара -->
+  <nav class="#0a3981 blue darken-4">
+    <!-- Цвет Nav бара -->
     <div class="nav-wrapper">
       <!-- Левая часть -->
       <router-link to="/"><img src="../png/salesk.png" /></router-link>
+
       <!-- Правая часть -->
       <div class="routes">
+        <!-- email авторизованого пользователя  -->
         <div class="email">{{ email }}</div>
         <router-link
           v-for="route in filteredRoutes"
@@ -15,6 +17,7 @@
           active-class="active"
           >{{ route.name }}</router-link
         >
+        <!-- выход авторизованого пользователя  -->
         <button
           class="waves-effect waves-light btn"
           type="submit"

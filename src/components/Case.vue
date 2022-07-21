@@ -3,7 +3,7 @@
     <div class="col s1" align="left">{{ index + 1 }}</div>
     <div class="col ean s2">{{ ShowCase.EAN.toUpperCase() }}</div>
     <div class="col inn s2">{{ ShowCase.INN.toUpperCase() }}</div>
-    <div class="col price s2">{{ ShowCase.Price.toUpperCase() }}</div>
+    <div class="col price s2">{{ ShowCase.Price.toUpperCase() }} ₽</div>
     <div class="col name s2" align="left">
       {{ ShowCase.Name.toUpperCase() }}
     </div>

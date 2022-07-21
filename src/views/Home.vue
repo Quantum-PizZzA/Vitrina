@@ -1,26 +1,38 @@
 <template>
   <div>
-    <h3>{{ homeTitle }}</h3>
+<!--    <h3>{{ homeTitle }}</h3>-->
     <div>
       <router-link to="/signin">
-        <button class="waves-effect waves-light btn-large" @click="register">
-          Войти
-        </button>
+<!--        <button class="waves-effect waves-light btn-large" @click="register">-->
+<!--          Войти-->
+<!--        </button>-->
       </router-link>
-      <h6>или</h6>
+<!--      <h6>или</h6>-->
       <router-link to="/register">
-        <button
-          class="waves-effect waves-light btn-small disabled"
-          @click="register"
-        >
-          Зарегистрироваться
-        </button>
+<!--        <button-->
+<!--          class="waves-effect waves-light btn-small disabled"-->
+<!--          @click="register"-->
+<!--        >-->
+<!--          Зарегистрироваться-->
+<!--        </button>-->
       </router-link>
       <router-view />
       <div class="container">
-        <input type="text" />
+<!--        <input type="text" />-->
+        <input class="search3__input mini-suggest__input"
+               autocomplete="off"
+               autocorrect="off"
+               autocapitalize="off"
+               spellcheck="false"
+               aria-autocomplete="list"
+               aria-label="Запрос"
+               id="text" maxlength="400"
+               name="text" autofocus=""
+               placeholder="Найдётся всё! Со временем..."
+               role="combobox"
+               aria-controls="suggest-list-xm3xhzb9j6l">
       </div>
-      <h6>Список товаров</h6>
+<!--      <h6>Список товаров</h6>-->
       <Loader v-if="isLoading" class="loader" />
       <Cases v-else :cases="cases" />
     </div>
@@ -70,4 +82,6 @@ export default {
 button {
   margin: 30px;
 }
+
+
 </style>
